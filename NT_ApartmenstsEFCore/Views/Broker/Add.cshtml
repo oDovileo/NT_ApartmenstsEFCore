@@ -1,0 +1,13 @@
+﻿@model NT_ApartmenstsEFCore.DTOs.BrokerCreate
+
+
+@using (Html.BeginForm("Add", "Broker", FormMethod.Post))
+{
+    @Html.LabelFor(s => s.Name)
+    @Html.TextBoxFor(s => s.Name)
+
+    @Html.LabelFor(s => s.CompanyId)
+    @Html.DropDownListFor(s => s.CompanyId, new MultiSelectList(Model.Companies, "Id", "Name"))
+
+    <input type="submit" value="Submit" />
+}

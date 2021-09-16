@@ -1,0 +1,16 @@
+﻿@model NT_ApartmenstsEFCore.DTOs.BrokerIndex
+@using (Html.BeginForm("Index", "Broker", FormMethod.Post))
+{
+
+    @Html.LabelFor(s => s.CompanyId)
+    @Html.DropDownListFor(s => s.CompanyId, new MultiSelectList(Model.Companies, "Id", "Name"), "All")
+
+    <input type="submit" value="Submit" />
+}
+
+<ul>
+    @foreach (var broker in @Model.Brokers)
+    {
+        <li>@broker.Name @broker.Company?.Name   @Html.ActionLink("Edit", "Edit", "Company", new { id = broker.Id }, null)  @Html.ActionLink("Delete", "Delete", "Company", new { id = broker.Id }, null)</li>
+    }
+</ul>

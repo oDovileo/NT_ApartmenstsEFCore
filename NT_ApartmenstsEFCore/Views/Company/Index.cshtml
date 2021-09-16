@@ -1,0 +1,10 @@
+﻿@model List<CompanyModel>
+
+<ul>
+    @foreach (var company in @Model)
+    {
+        <li>@company.Name @Html.ActionLink("Delete", "Delete", "Company", new { id = company.Id }, null)</li>
+        <li>@company.Name @Html.ActionLink("Edit", "Edit", "Company", new { id = company.Id }, null)</li>
+
+    }
+</ul>

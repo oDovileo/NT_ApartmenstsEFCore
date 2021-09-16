@@ -1,0 +1,10 @@
+﻿@model CompanyModel
+
+@using (Html.BeginForm("Add", "Company", FormMethod.Post))
+{
+    @Html.LabelFor(s => s.Name)
+    @Html.TextBoxFor(s => s.Name)
+
+    <input type="submit" value="Submit" />
+
+}
